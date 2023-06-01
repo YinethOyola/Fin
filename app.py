@@ -3,7 +3,7 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.graph_objs as go
 
-
+                                                                                                                                                                                                                                                                                     
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 server = app.server
@@ -18,7 +18,7 @@ app.layout = dbc.Container(
         html.Label("Seleccione municipio 2"),
         dcc.Dropdown(hurtos['DEPARTAMENTO'].unique(),'BOGOTÁ D.C.',id ="departamento_2"),
         html.Div(id="output")
-    ]
+    ]                                                                                                                                                           
 )
 
 @callback(
@@ -32,7 +32,7 @@ def comparar(departamento_1, departamento_2):
     
     hurto_1 = hurtos.query("DEPARTAMENTO == @departamento_1")
     hurto_2 = hurtos.query("DEPARTAMENTO == @departamento_2")
-    
+                                 
     
     return dcc.Graph(
         figure={
